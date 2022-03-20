@@ -2,7 +2,7 @@ const sidebarConfig = require("./sidebarConfig");
 module.exports = {
   title: "Jealh's Note",
   description: "Just write something you want to share",
-  dest: './docs/.vuepress/dist',
+  dest: './dist',
   ga: "",
   base: "/notebook/",
   evergreen: true,

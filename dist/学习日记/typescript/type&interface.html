@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>interface 与 type 的主要区别 | Jealh&#39;s Note</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/notebook/favicon.ico">
+    <meta name="description" content="Just write something you want to share">
+    
+    <link rel="preload" href="/notebook/assets/css/0.styles.eccd4bb1.css" as="style"><link rel="preload" href="/notebook/assets/js/app.2bbec752.js" as="script"><link rel="preload" href="/notebook/assets/js/2.cb78087c.js" as="script"><link rel="preload" href="/notebook/assets/js/41.2e909419.js" as="script"><link rel="prefetch" href="/notebook/assets/js/10.d1c35acc.js"><link rel="prefetch" href="/notebook/assets/js/11.f9e0c684.js"><link rel="prefetch" href="/notebook/assets/js/12.9f29c083.js"><link rel="prefetch" href="/notebook/assets/js/13.5da94e75.js"><link rel="prefetch" href="/notebook/assets/js/14.02154381.js"><link rel="prefetch" href="/notebook/assets/js/15.82754c60.js"><link rel="prefetch" href="/notebook/assets/js/16.824aa2eb.js"><link rel="prefetch" href="/notebook/assets/js/17.5b4259b6.js"><link rel="prefetch" href="/notebook/assets/js/18.4c3b42c6.js"><link rel="prefetch" href="/notebook/assets/js/19.20d1ea37.js"><link rel="prefetch" href="/notebook/assets/js/20.b4de5137.js"><link rel="prefetch" href="/notebook/assets/js/21.6c5e418a.js"><link rel="prefetch" href="/notebook/assets/js/22.f9a1ab2e.js"><link rel="prefetch" href="/notebook/assets/js/23.ddd6167d.js"><link rel="prefetch" href="/notebook/assets/js/24.0c5bf0f2.js"><link rel="prefetch" href="/notebook/assets/js/25.1d4332d6.js"><link rel="prefetch" href="/notebook/assets/js/26.4b84d626.js"><link rel="prefetch" href="/notebook/assets/js/27.180fb0f5.js"><link rel="prefetch" href="/notebook/assets/js/28.0be2b6a9.js"><link rel="prefetch" href="/notebook/assets/js/29.67d09e9f.js"><link rel="prefetch" href="/notebook/assets/js/3.822c4d40.js"><link rel="prefetch" href="/notebook/assets/js/30.6004c00f.js"><link rel="prefetch" href="/notebook/assets/js/31.7581d936.js"><link rel="prefetch" href="/notebook/assets/js/32.cca6ed5d.js"><link rel="prefetch" href="/notebook/assets/js/33.3dc76656.js"><link rel="prefetch" href="/notebook/assets/js/34.482692d2.js"><link rel="prefetch" href="/notebook/assets/js/35.359f727b.js"><link rel="prefetch" href="/notebook/assets/js/36.4c146642.js"><link rel="prefetch" href="/notebook/assets/js/37.78e5ef83.js"><link rel="prefetch" href="/notebook/assets/js/38.6979069e.js"><link rel="prefetch" href="/notebook/assets/js/39.da951f9f.js"><link rel="prefetch" href="/notebook/assets/js/4.7f159174.js"><link rel="prefetch" href="/notebook/assets/js/40.375f1179.js"><link rel="prefetch" href="/notebook/assets/js/42.c78bbb7f.js"><link rel="prefetch" href="/notebook/assets/js/43.bd27f618.js"><link rel="prefetch" href="/notebook/assets/js/44.3f66e818.js"><link rel="prefetch" href="/notebook/assets/js/45.96936372.js"><link rel="prefetch" href="/notebook/assets/js/46.bee6d4c0.js"><link rel="prefetch" href="/notebook/assets/js/47.cdd7cef9.js"><link rel="prefetch" href="/notebook/assets/js/48.b2371a0c.js"><link rel="prefetch" href="/notebook/assets/js/49.a315b750.js"><link rel="prefetch" href="/notebook/assets/js/5.50caeda2.js"><link rel="prefetch" href="/notebook/assets/js/50.af303553.js"><link rel="prefetch" href="/notebook/assets/js/51.d6ecad7c.js"><link rel="prefetch" href="/notebook/assets/js/6.680940b5.js"><link rel="prefetch" href="/notebook/assets/js/7.73df4c48.js"><link rel="prefetch" href="/notebook/assets/js/8.0ec1ffc7.js"><link rel="prefetch" href="/notebook/assets/js/9.5063e226.js">
+    <link rel="stylesheet" href="/notebook/assets/css/0.styles.eccd4bb1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notebook/" class="home-link router-link-active"><!----> <span class="site-name">Jealh's Note</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notebook/学习日记/" class="nav-link">
+  主页
+</a></div> <a href="https://github.com/vuejs/vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/notebook/学习日记/" class="nav-link">
+  主页
+</a></div> <a href="https://github.com/vuejs/vuepress" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>学习日记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>.vscode</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>css</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>git</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>html</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>javascript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>less</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>nginx</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>nodejs</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>react</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>typescript</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notebook/学习日记/typescript/type&amp;interface.html" class="active sidebar-link">interface 与 type 的主要区别</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/学习日记/typescript/type&amp;interface.html#differ-list" class="sidebar-link">differ List</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/notebook/学习日记/typescript/type&amp;interface.html#object-function" class="sidebar-link">Object/Function</a></li><li class="sidebar-sub-header"><a href="/notebook/学习日记/typescript/type&amp;interface.html#primitives-type可以别名原始值-string-turple-unions" class="sidebar-link">primitives,type可以别名原始值，string,turple,unions</a></li><li class="sidebar-sub-header"><a href="/notebook/学习日记/typescript/type&amp;interface.html#extends-扩展方式" class="sidebar-link">extends 扩展方式</a></li><li class="sidebar-sub-header"><a href="/notebook/学习日记/typescript/type&amp;interface.html#implments" class="sidebar-link">implments</a></li><li class="sidebar-sub-header"><a href="/notebook/学习日记/typescript/type&amp;interface.html#declare-merge-申明合并" class="sidebar-link">declare merge 申明合并</a></li></ul></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>Web Security</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>数据结构</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>浏览器</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>计网</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>设计模式</span> <span class="arrow right"></span></p> <!----></section></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="interface-与-type-的主要区别"><a href="#interface-与-type-的主要区别" class="header-anchor">#</a> interface 与 type 的主要区别</h1> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// 声明一个对象的类型时，有两个主要的工具：接口（interface）和类型别名（type aliases）。</span>
+<span class="token comment">//</span>
+<span class="token comment">// 他们非常相似，并且在大多数情况下是相同的。</span>
+
+<span class="token keyword">type</span> <span class="token class-name">BirdType</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  wings<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">BirdInterface</span> <span class="token punctuation">{</span>
+  wings<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> bird1<span class="token operator">:</span> BirdType <span class="token operator">=</span> <span class="token punctuation">{</span> wings<span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> bird2<span class="token operator">:</span> BirdInterface <span class="token operator">=</span> <span class="token punctuation">{</span> wings<span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 因为 TypeScript 有着结构化类型系统。</span>
+<span class="token comment">// 我们也可以混合使用他们。</span>
+
+<span class="token keyword">const</span> bird3<span class="token operator">:</span> BirdInterface <span class="token operator">=</span> bird1<span class="token punctuation">;</span>
+
+<span class="token comment">// 他们都支持扩展另一个些接口或类型。</span>
+<span class="token comment">// 类型别名通过并集类型来实现，接口通过 extends 关键字。</span>
+
+<span class="token keyword">type</span> <span class="token class-name">Owl</span> <span class="token operator">=</span> <span class="token punctuation">{</span> nocturnal<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span> <span class="token operator">&amp;</span> BirdType<span class="token punctuation">;</span>
+<span class="token keyword">type</span> <span class="token class-name">Robin</span> <span class="token operator">=</span> <span class="token punctuation">{</span> nocturnal<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span> <span class="token operator">&amp;</span> BirdInterface<span class="token punctuation">;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Peacock</span> <span class="token keyword">extends</span> <span class="token class-name">BirdType</span> <span class="token punctuation">{</span>
+  colourful<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  flies<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">interface</span> <span class="token class-name">Chicken</span> <span class="token keyword">extends</span> <span class="token class-name">BirdInterface</span> <span class="token punctuation">{</span>
+  colourful<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  flies<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> owl<span class="token operator">:</span> Owl <span class="token operator">=</span> <span class="token punctuation">{</span> wings<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> nocturnal<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> chicken<span class="token operator">:</span> Chicken <span class="token operator">=</span> <span class="token punctuation">{</span> wings<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> colourful<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> flies<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Owl = {</span>
+<span class="token comment">//     wings:2,</span>
+<span class="token comment">//     noctural:true</span>
+<span class="token comment">// }</span>
+<span class="token comment">// Chicken = {</span>
+<span class="token comment">//     wings:2,</span>
+<span class="token comment">//     colorful:false,</span>
+<span class="token comment">//     flies:false</span>
+<span class="token comment">// }</span>
+
+<span class="token comment">// 也就是说，我们建议您使用接口而不是类型别名，因为你可以在接口中获得更好的错误提示。</span>
+<span class="token comment">// 如果你将鼠标悬停在下面的错误上，你会看到在使用接口（例如 Chicken）时，</span>
+<span class="token comment">// TypeScript 会提供更简洁的提示信息。</span>
+
+<span class="token comment">// interface提供更好的类型错误提示</span>
+owl <span class="token operator">=</span> chicken<span class="token punctuation">;</span>
+<span class="token comment">// Type 'Chicken' is not assignable to type 'Owl'.</span>
+<span class="token comment">// Property 'nocturnal' is missing in type 'Chicken' </span>
+<span class="token comment">// but required in type '{ nocturnal: true; }'</span>
+chicken <span class="token operator">=</span> owl<span class="token punctuation">;</span>
+<span class="token comment">// Type 'Owl' is missing the following properties </span>
+<span class="token comment">// from type 'Chicken': colourful, flies</span>
+
+
+<span class="token comment">// 一个接口和类型别名的主要区别是，接口是开放的，类型别名是封闭的。</span>
+<span class="token comment">// 这意味着你可以你可以通过多次声明同一个接口来扩展它。</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Kitten</span> <span class="token punctuation">{</span>
+  purrs<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Kitten</span> <span class="token punctuation">{</span>
+  colour<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 与此同时，类型别名不可以在外部变更它的声明。</span>
+
+<span class="token keyword">type</span> <span class="token class-name">Puppy</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  color<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">type</span> <span class="token class-name">Puppy</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  toys<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 基于你不同的目的，这个区别可以是证明的也可以是负面的。</span>
+<span class="token comment">// 一般来说，对于公开的需要暴露的类型，将他们作为接口是更好的选择。</span>
+
+<span class="token comment">// 要查看接口和类型定义之间所有边际条件，下面的 StackOverflow 讨论是最好的资源之一:</span>
+
+<span class="token comment">// https://stackoverflow.com/questions/37233735/typescript-interfaces-vs-types/52682220#52682220</span>
+
+</code></pre></div><h2 id="differ-list"><a href="#differ-list" class="header-anchor">#</a> differ List</h2> <h3 id="object-function"><a href="#object-function" class="header-anchor">#</a> Object/Function</h3> <ul><li>Object</li></ul> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// type</span>
+<span class="token keyword">type</span> <span class="token class-name">obj</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span><span class="token string">'type obj'</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// interface</span>
+<span class="token class-name"><span class="token keyword">interface</span></span> obj <span class="token punctuation">{</span>
+  name<span class="token operator">:</span><span class="token string">&quot;interface obj&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li>Function</li></ul> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// type</span>
+<span class="token keyword">type</span> <span class="token class-name">typeFun</span> <span class="token operator">=</span> <span class="token punctuation">(</span>name<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token keyword">void</span><span class="token punctuation">;</span>
+
+<span class="token comment">// interface</span>
+<span class="token class-name"><span class="token keyword">interface</span></span> interfaceFun <span class="token punctuation">{</span>
+  <span class="token punctuation">(</span>name<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token keyword">void</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="primitives-type可以别名原始值-string-turple-unions"><a href="#primitives-type可以别名原始值-string-turple-unions" class="header-anchor">#</a> primitives,type可以别名原始值，string,turple,unions</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// string</span>
+<span class="token keyword">type</span> <span class="token class-name">aliasStr</span> <span class="token operator">=</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+<span class="token comment">// object</span>
+<span class="token keyword">type</span> <span class="token class-name">aliasObj_1</span> <span class="token operator">=</span> <span class="token punctuation">{</span>x<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">type</span> <span class="token class-name">aliasObj_2</span> <span class="token operator">=</span> <span class="token punctuation">{</span>x<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// unions</span>
+<span class="token keyword">type</span> <span class="token class-name">unions</span> <span class="token operator">=</span> aliasObj_1 <span class="token operator">|</span> aliasObj_2<span class="token punctuation">;</span>
+
+<span class="token comment">// turple</span>
+<span class="token keyword">type</span> <span class="token class-name">aliasTurple</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">number</span><span class="token punctuation">,</span><span class="token builtin">string</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="extends-扩展方式"><a href="#extends-扩展方式" class="header-anchor">#</a> extends 扩展方式</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">// type</span>
+<span class="token keyword">type</span> <span class="token class-name">extendsType</span> <span class="token operator">=</span> <span class="token builtin">string</span> <span class="token operator">&amp;</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+
+<span class="token comment">// interface</span>
+<span class="token class-name"><span class="token keyword">interface</span></span> xInterF <span class="token punctuation">{</span>
+  x<span class="token operator">:</span><span class="token builtin">number</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">interface</span> <span class="token class-name">extendsInterF</span> <span class="token operator">=</span> xInterF <span class="token keyword">extends</span> <span class="token punctuation">{</span> y<span class="token operator">:</span><span class="token builtin">number</span> <span class="token punctuation">}</span>
+</code></pre></div><h3 id="implments"><a href="#implments" class="header-anchor">#</a> implments</h3> <ul><li>类可以以完全相同的方式<strong>implment</strong>接口或类型别名。</li> <li>但是请注意，类和接口被视为静态蓝图。</li> <li>因此，它们不能<strong>implments</strong>/<strong>extends</strong>命名联合类型的类型别名</li></ul> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+  x<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  y<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SomePoint</span> <span class="token keyword">implements</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+  x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  y <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> <span class="token class-name">Point2</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  x<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  y<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SomePoint2</span> <span class="token keyword">implements</span> <span class="token class-name">Point2</span> <span class="token punctuation">{</span>
+  x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  y <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> <span class="token class-name">PartialPoint</span> <span class="token operator">=</span> <span class="token punctuation">{</span> x<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span> <span class="token punctuation">}</span> <span class="token operator">|</span> <span class="token punctuation">{</span> y<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// FIXME: can not implement a union type</span>
+<span class="token comment">// 不能implements联合类型</span>
+<span class="token keyword">class</span> <span class="token class-name">SomePartialPoint</span> <span class="token keyword">implements</span> <span class="token class-name">PartialPoint</span> <span class="token punctuation">{</span>
+  x <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  y <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="declare-merge-申明合并"><a href="#declare-merge-申明合并" class="header-anchor">#</a> declare merge 申明合并</h3> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token keyword">interface</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+  x<span class="token operator">:</span><span class="token builtin">number</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">interface</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+  y<span class="token operator">:</span><span class="token builtin">number</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 最终Point的类型结构</span>
+<span class="token comment">// Point {</span>
+<span class="token comment">//   x:number,</span>
+<span class="token comment">//   y:number</span>
+<span class="token comment">// }</span>
+
+<span class="token keyword">type</span> <span class="token class-name">Puppy</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  color<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">type</span> <span class="token class-name">Puppy</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  toys<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+Error<span class="token operator">:</span> Duplicate identifier <span class="token string">'Puppy'</span><span class="token punctuation">.</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notebook/学习日记/react/一些数据结构.html" class="prev">
+        dataStructure
+      </a></span> <span class="next"><a href="/notebook/学习日记/数据结构/平衡二叉树.html">
+        平衡二叉树
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notebook/assets/js/app.2bbec752.js" defer></script><script src="/notebook/assets/js/2.cb78087c.js" defer></script><script src="/notebook/assets/js/41.2e909419.js" defer></script>
+  </body>
+</html>
