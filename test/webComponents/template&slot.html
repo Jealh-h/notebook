@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>template 与 slot</title>
+  </head>
+  <body>
+    <!-- 
+      HTML <template> 元素使它更容易实现(这在现代浏览器中得到了很好的支持)。
+      此元素及其内容不会在DOM中呈现，但仍可使用JavaScript去引用它。
+     -->
+    <template id="my-template">
+      <!-- 标签有一个 <style> 标签，
+      里面有一些  只能在当前<template> 的派生中生效的 CSS 样式 -->
+      <style>
+        p {
+          color: white;
+          background-color: #666;
+          padding: 5px;
+        }
+      </style>
+      <h1>My Paragraph</h1>
+      <slot name="my-text">my slot text</slot>
+    </template>
+    <my-patagraph>
+      <p slot="my-text">slotable text</p>
+    </my-patagraph>
+    <script>
+      let template = document.getElementById("my-template");
+      let templateContent = template.content;
+      document.body.appendChild(templateContent);
+      // 使用 <slot> 让它能在单个实例中通过声明式的语法展示不同的文本。
+      customElements.define(
+        "my-paragraph",
+        class extends HTMLElement {
+          constructor() {
+            super();
+            let template = document.getElementById("my-paragraph");
+            let templateContent = template.content;
+
+            const shadowRoot = this.attachShadow({ mode: "open" }).appendChild(
+              templateContent.cloneNode(true)
+            );
+          }
+        }
+      );
+    </script>
+  </body>
+</html>

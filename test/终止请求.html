@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>终止请求</title>
+  </head>
+  <body>
+    <input style="display: none" type="file" name="" id="upload" />
+    <label for="upload">上传</label>
+    <button onclick="request()">request</button>
+    <button onclick="cancel()">cancel request</button>
+    <script>
+      const controller = new AbortController();
+      let stopSignal = controller.signal;
+      // fetch终止
+      function request() {
+        fetch("http://localhost:3003", {
+          method: "get",
+          signal: stopSignal, // 终止标志
+        })
+          .then((res) => {})
+          .catch((err) => {
+            console.log(err, err.message);
+          });
+      }
+      function cancel() {
+        controller.abort("终止的原因");
+        console.log("请求终止");
+      }
+    </script>
+  </body>
+</html>

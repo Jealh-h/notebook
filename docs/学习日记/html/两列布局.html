@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .left,
+      .right {
+        display: inline-block;
+        height: 100px;
+      }
+      .left {
+        flex-basis: 200px;
+        width: 500px;
+        background-color: red;
+      }
+      .right {
+        flex: 1;
+        background-color: blue;
+      }
+      .row {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+    <button class="btn">getColor</button>
+  </body>
+  <script>
+    var colors = ["red", "yellow", "blue"];
+    var btn = document.querySelector(".btn");
+    btn.addEventListener("click", getColor());
+    function getColor() {
+      let lastTime = 0;
+      let index = 0;
+      return function () {
+        let now = new Date().getTime();
+        if (now - lastTime > 5000) {
+          index = 0;
+        }
+        console.log(colors[index]);
+        index = ++index % 3;
+        lastTime = now;
+        console.log(lastTime);
+      };
+    }
+  </script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var myWorker = new Worker("worker.js");
+      myWorker.onmessage = function (msg) {
+        console.log("main:", msg);
+        this.terminate();
+      };
+      var sharedWorker = new SharedWorker();
+      //   在使用start()方法打开端口连接时，如果父级线程和worker线程需要双向通信，那么它们都需要调用start()方法。
+      sharedWorker.port.start();
+      sharedWorker.port.postMessage("shared");
+      sharedWorker.port.onmessage = function (e) {
+        result2.textContent = e.data;
+        console.log("Message received from worker");
+      };
+    </script>
+  </body>
+</html>

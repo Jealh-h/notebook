@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shadow DOM</title>
+  </head>
+  <body>
+    <div id="shadow-host"><p>shadow host</p></div>
+    <script>
+      var host = document.querySelector("#shadow-host");
+      let shadow = host.attachShadow({
+        // open 表示可以通过页面内的
+        //  JavaScript 方法来获取 Shadow DOM，例如使用 Element.shadowRoot 属性：
+        mode: "open",
+      });
+      shadow.append("123456");
+    </script>
+  </body>
+</html>

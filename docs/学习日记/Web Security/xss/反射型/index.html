@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main-content {
+        padding: 0 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      反射型XSS
+      <ol>
+        <li>攻击者构造出特殊的URL，其中包括恶意代码</li>
+        <li>
+          用户打开带有恶意代码的URL时，网站服务端将恶意代码从URL中取出，拼接在HTML中返回浏览器客户端
+        </li>
+        <li>用户浏览器接受到响应后解析执行，混在其中的恶意代码也被执行。</li>
+        <li>
+          恶意代码盗取用户数据并发送到攻击网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作
+        </li>
+      </ol>
+    </h2>
+    <div class="main-content">
+      <form onsubmit="return false">
+        <textarea
+          name="textContent"
+          placeholder="请输入恶意代码"
+          id=""
+          cols="30"
+          rows="10"
+          value=""
+        >
+<script>alert('XSS');</script>">
+        ></textarea
+        >
+
+        <button type="submit" id="submit">提交</button
+        ><label for="submit"
+          >提交后返回恶意代码,提交的url参数里含有恶意代码,将返回恶意代码</label
+        >
+      </form>
+    </div>
+    <div class="test"></div>
+  </body>
+  <script>
+    var btn = document.querySelector("#submit");
+    var txtare = document.querySelector("textarea");
+    var test = document.querySelector(".test");
+
+    btn.addEventListener("click", () => {
+      fetch(`http://localhost:3000/submit?query=<script>alert('XSS')<\/script>`)
+        .then((response) => {
+          return response.text();
+        })
+        .then((data) => {
+          // 创建一个新的 div 元素
+          //   let newDiv = document.createElement("div");
+          //   // 给它一些内容
+          //   newDiv.outerHTML = data;
+          //   document.body.appendChild(newDiv);
+          document.write(data);
+        });
+    });
+    test.textContent = "<h1>test</h1>";
+  </script>
+</html>

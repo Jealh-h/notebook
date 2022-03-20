@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src https://*; child-src 'none';"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="javascript:alert('hello')">违反了CSP</a>
+    <a href="http://127.0.0.1:5502/hello">没有违反CSP</a>
+  </body>
+</html>

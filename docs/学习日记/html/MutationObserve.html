@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="targetElementId">MutationObserver</div>
+    <button onclick="filp()">observe</button>
+    <script>
+      // 得到要观察的元素
+      var elementToObserve = document.querySelector("#targetElementId");
+
+      // 创建一个叫 `observer` 的新 `MutationObserver` 实例，
+      // 并将回调函数传给它
+      var observer = new MutationObserver(function () {
+        console.log("callback that runs when observer is triggered");
+      });
+
+      // 在 MutationObserver 实例上调用 `observe` 方法，
+      // 并将要观察的元素与选项传给此方法
+      observer.observe(elementToObserve, { subtree: true, childList: true });
+      //       childList 可选
+      // 设为 true 以监视目标节点（如果 subtree 为 true，则包含子孙节点）添加或删除新的子节点。默认值为 false。
+      // subtree (en-US) 可选
+      // 设为 true 以将监视范围扩展至目标节点整个节点树中的所有节点。MutationObserverInit 的其他值也会作用于此子树下的所有节点，而不仅仅只作用于目标节点。默认值为 false。
+      const li = document.createElement("li");
+      li.innerHTML = "this is li";
+      function filp() {
+        elementToObserve.appendChild(li);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>拖拽上传</title>
+    <style>
+      #drop-zone {
+        margin: 0 auto;
+        width: 400px;
+        height: 200px;
+        background-color: #bfbfbf;
+        border: 3px dashed #000;
+        box-sizing: border-box;
+        padding: 5px;
+        line-height: 180px;
+        text-align: center;
+        font-size: 1.3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="drop-zone">拖入图片预览</div>
+    <script>
+      const width = 400;
+
+      var dropZone = document.querySelector("#drop-zone");
+      dropZone.ondrop = function (dropEvent) {
+        dropEvent.preventDefault();
+        const file = dropEvent.dataTransfer.files[0];
+        // console.log(URL.createObjectURL(file));
+        readFile(file);
+      };
+      dropZone.ondragover = function (dragOverEvent) {
+        dragOverEvent.preventDefault();
+        console.log(dragOverEvent.dataTransfer);
+      };
+      function readFile(f) {
+        var reader = new FileReader();
+        reader.readAsDataURL(f);
+        reader.onload = function (e) {
+          const url = e.target.result;
+          const img = new Image();
+          img.src = url;
+          img.onload = function (res) {
+            // console.log(img.naturalHeight, img.naturalWidth);
+            img.width = width;
+            document.body.appendChild(img);
+          };
+        };
+      }
+    </script>
+  </body>
+</html>

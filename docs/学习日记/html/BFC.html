@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .float {
+        float: left;
+        width: 200px;
+        height: 200px;
+        background-color: #7ff940;
+      }
+      .follow-item {
+        width: 300px;
+        height: 100px;
+        background-color: red;
+        /* margin-left: 50px; */
+        /* 清除浮动 */
+        /* display: flow-root; */
+        overflow: auto;
+        margin: 50px;
+      }
+      .item {
+        height: 150px;
+        width: 300px;
+        background-color: blue;
+        margin: 50px;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="float">浮动元素</div>
+    <div class="follow-item">浮动元素之后的元素</div>
+    <div class="item">123</div>
+  </body>
+</html>

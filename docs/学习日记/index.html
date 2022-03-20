@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">按钮</button>
+    <button id="btn_2">按钮clean</button>
+    <div class="container">
+      <div style="height: 100px">hello</div>
+      <div style="min-height: 10px"></div>
+      <input type="text" id="input" />
+      <button onclick="remove()">clear所有元素</button>
+    </div>
+    <style>
+      .container {
+        display: flex;
+        width: 300px;
+      }
+      .container > div {
+        width: 200px;
+      }
+    </style>
+    <script>
+      var btn = document.querySelector("#btn");
+      var btn_2 = document.querySelector("#btn_2");
+      var input = document.querySelector("#input");
+      btn.addEventListener("click", (e) => {
+        console.log(e.target);
+      });
+      btn_2.addEventListener("click", () => {
+        console.log("clean");
+        // btn.click();
+        btn.removeEventListener("click", btn.onclick);
+        // btn.click = null;
+      });
+      input.addEventListener("keyup", (e) => {
+        e.preventDefault();
+        console.log(e);
+      });
+      document.addEventListener("keydown", (e) => {
+        e.preventDefault();
+        console.log(e);
+      });
+      function remove() {
+        let sibling;
+        while ((sibling = document.body.lastChild)) {
+          document.body.removeChild(sibling);
+        }
+      }
+    </script>
+  </body>
+</html>

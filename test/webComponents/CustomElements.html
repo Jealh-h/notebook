@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custome elements</title>
+  </head>
+  <body>
+    <!-- 
+      使用CustomElementRegistry接口
+     -->
+    // 使用
+    <my-component text="textAttribute"></my-component>
+    <script>
+      class MyComponent extends HTMLDivElement {
+        constructor() {
+          super();
+          var shadow = this.attachShadow({ mode: "open" });
+
+          var wrapper = document.createElement("span");
+          wrapper.setAttribute("class", "wrapper");
+
+          var text = this.getAttribute("text");
+          wrapper.innerText = text;
+          shadow.appendChild(wrapper);
+        }
+        connectedCallback() {
+          console.log("my-component connected");
+        }
+      }
+      // custom element 的名称不能是单个单词，且其中必须要有短横线
+      // 将custom element注册到CustomElementRegistry上
+      customElements.define("my-component", MyComponent, { extends: "div" });
+    </script>
+  </body>
+</html>
