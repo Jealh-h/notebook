@@ -10,7 +10,7 @@ module.exports = {
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
   themeConfig: {
-    repo: 'vuejs/vuepress', // github链接配置
+    repo: 'Jealh-h/notebook', // github链接配置
     nav: [
       { text: '主页', link: '/学习日记/' }
     ],
