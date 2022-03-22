@@ -5,12 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .container {
+        width: 1000px;
+        height: 300px;
+        background-color: #dadada;
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .center-box {
+        width: 300px;
+        height: 100px;
+        background-color: #666777;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 auto;
+      }
+      .grid-layout {
+        display: grid;
+        /* grid: repeat(2, 60px) / auto-flow 80px; */
+        grid: 150px / 1fr 1fr 1fr;
+      }
+
+      .grid-layout > div {
+        background-color: #8ca0ff;
+        width: 50px;
+        height: 50px;
+      }
+      li {
+        display: block;
+      }
+    </style>
   </head>
   <body>
-    <iframe
+    <!-- <iframe
       allowfullscreen
       src="https://www.bilibili.com/"
       frameborder="0"
     ></iframe>
+    <div class="container">
+      <div class="center-box">123</div>
+    </div> -->
+    <div class="grid-layout">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <span style="word-wrap: break-word"
+      >111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</span
+    >
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
   </body>
 </html>
