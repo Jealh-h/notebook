@@ -513,14 +513,26 @@ const { EventEmitter } = require("stream");
 // let res = allSettled(promises);
 // console.log(res);
 
-const ee = new EventEmitter();
-ee.once('once', function () {
-    console.log('once event');
-})
-ee.emit('once');
-ee.emit('once');
-console.log(ee.listeners('once'));
+// const ee = new EventEmitter();
+// ee.once('once', function () {
+//     console.log('once event');
+// })
+// ee.emit('once');
+// ee.emit('once');
+// console.log(ee.listeners('once'));
 
+
+// var name = 'tonny'
+// var b = {
+//     name: 'tom',
+//     getelement: () => {
+//         console.log(this);
+//         console.log(name)
+//     }
+// }
+// // 箭头函数是 window/tonny
+// // 普通函数是 {name:'tom',getelement:'f'}/tom
+// b.getelement();
 
 
 

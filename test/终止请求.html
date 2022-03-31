@@ -19,6 +19,9 @@
         fetch("http://localhost:3003", {
           method: "get",
           signal: stopSignal, // 终止标志
+          headers: {
+            referer: "http://hello.com",
+          },
         })
           .then((res) => {})
           .catch((err) => {

@@ -5,6 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .outer {
+        background: #f00;
+      }
+      .inner {
+        box-sizing: content-box;
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        border: 1px #fff solid;
+        margin: 10px;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div id="root"></div>
+    <div class="outer">
+      <div class="inner"></div>
+    </div>
+    <script>
+      function createEventListenerWrapperWithPriority(
+        targetContainer,
+        domEventName,
+        eventSystemFlags
+      ) {
+        return dispatchDiscreteEvent.bind(
+          null,
+          domEventName,
+          eventSystemFlags,
+          targetContainer
+        );
+      }
+      function dispatchDiscreteEvent(
+        domEventName,
+        eventSystemFlags,
+        container,
+        nativeEvent
+      ) {
+        console.log(
+          "domEventName:",
+          domEventName,
+          "eventSystemFlags:",
+          eventSystemFlags,
+          "container:",
+          container,
+          "nativeEvent:",
+          nativeEvent
+        );
+      }
+      let listener = createEventListenerWrapperWithPriority(
+        document.querySelector("#root"),
+        "domEventName",
+        0
+      );
+      var inner = document.querySelector(".inner");
+      inner.addEventListener("click", listener);
+    </script>
+  </body>
 </html>

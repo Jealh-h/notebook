@@ -6,9 +6,36 @@
     <meta http-equiv="cache-control" content="no-store" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bad Request</title>
+    <style>
+      p:nth-child(1) {
+        margin-bottom: 1rem;
+      }
+      p:nth-child(2) {
+        margin-top: 100px;
+      }
+      section {
+        margin-top: 13px;
+        margin-bottom: 87px;
+      }
+
+      header {
+        margin-top: 87px;
+      }
+
+      footer {
+        margin-bottom: 87px;
+      }
+    </style>
   </head>
   <body>
     <button id="send">发送</button>
+    <p>设置的下边距</p>
+    <p>设置的上边距</p>
+    <section>
+      <header>上边界重叠 87</header>
+      <main></main>
+      <footer>下边界重叠 87 不能再高了</footer>
+    </section>
     <script>
       var btn = document.querySelector("#send");
       btn.addEventListener("click", () => {

@@ -213,3 +213,16 @@ Promise {<fulfilled>: undefined}
 ## Promise.finally(function)
 
 - 在promise状态敲定后会 执行function，不管是 resolve 还是 reject
+
+## Promise.catch(function)
+
+- 返回一个Promise,并且处理reject的情况，与.then相似
+
+> catch后调用.then，then的第二个参数reject不会被触发，而是触发第一个resolve的函数
+
+## 总结
+
+- all：所有都resolve
+- allSettled：所有resolve/reject
+- any：只要其中一个resolve
+- race：只要一个resolve/reject

@@ -22,6 +22,10 @@
         background-color: red;
         margin: 0 300px;
       }
+      .grid-layout {
+        height: 200px;
+        grid-template-columns: 100px 1fr 100px;
+      }
     </style>
   </head>
   <body>
@@ -32,5 +36,10 @@
       <div class="content"></div>
     </div>
 </span></span></span></p><pre><code>#include &lt;stdio.h&gt;<br/>int main()<br/>{<br/>    int a, b;<br/>    while (scanf(&quot;%d %d&quot;, &amp;a, &amp;b) != EOF)<br/>        printf(&quot;%d\n&quot;, a + b);<br/>    return (0);<br/>}</code></pre><p></p><p>
-  </body>
+  <div class="grid-layout">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+</body>
 </html>
