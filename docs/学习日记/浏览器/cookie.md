@@ -50,12 +50,12 @@ lax细说：
 请求类型|示例|正常情况|Lax
 :-:|:-:|:-:|:-:
 链接 |<a href="..."></a>| 发送 Cookie| 发送 Cookie
-预加载| <link rel="prerender" href="..."/>| 发送 Cookie| 发送 Cookie
-GET |表单 <form method="GET" action="...">| 发送 Cookie| 发送 Cookie
-POST |表单 <form method="POST" action="...">| 发送 Cookie| 不发送
-iframe| <iframe src="..."></iframe>| 发送 Cookie| 不发送
+预加载| <link rel="prerender"/>| 发送 Cookie| 发送 Cookie
+GET |表单 <form method="GET">| 发送 Cookie| 发送 Cookie
+POST |表单 <form method="POST">| 发送 Cookie| 不发送
+iframe| <iframe></iframe>| 发送 Cookie| 不发送
 AJAX |$.get("...") |发送 Cookie| 不发送
-Image| <img src="...">| 发送 Cookie| 不发送
+Image| <img/>| 发送 Cookie| 不发送
 
 该请求必须是顶级导航.您可以将其视为等同于网址栏中显示的网址更改(例如，用户单击链接以转到另一个站点.
 请求方法必须是安全的(例如GET或HEAD，但不能是POST)
