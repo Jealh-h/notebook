@@ -534,5 +534,22 @@ const { EventEmitter } = require("stream");
 // // 普通函数是 {name:'tom',getelement:'f'}/tom
 // b.getelement();
 
+var a = 22;
+function fn() {
+  let a = 33;
+  var obj = {
+    a: 33,
+    fn: () => {
+      console.log(this)
+      console.log(this.a);
+    },
+    fn2: function () {
+      console.log(this.a);
+    }
+  }
+  obj.fn();
+  obj.fn2();
+}
+fn();
 
 
