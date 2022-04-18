@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>装饰模式 | Jealh&#39;s Note</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/notebook/favicon.ico">
+    <meta name="description" content="Just write something you want to share">
+    
+    <link rel="preload" href="/notebook/assets/css/0.styles.eccd4bb1.css" as="style"><link rel="preload" href="/notebook/assets/js/app.08b816ef.js" as="script"><link rel="preload" href="/notebook/assets/js/2.cb78087c.js" as="script"><link rel="preload" href="/notebook/assets/js/81.2bf6fa84.js" as="script"><link rel="prefetch" href="/notebook/assets/js/10.2e69e692.js"><link rel="prefetch" href="/notebook/assets/js/11.e82b291f.js"><link rel="prefetch" href="/notebook/assets/js/12.b9673658.js"><link rel="prefetch" href="/notebook/assets/js/13.f4134f6c.js"><link rel="prefetch" href="/notebook/assets/js/14.a2fbe22f.js"><link rel="prefetch" href="/notebook/assets/js/15.584fbfbf.js"><link rel="prefetch" href="/notebook/assets/js/16.096c9632.js"><link rel="prefetch" href="/notebook/assets/js/17.ad8dba77.js"><link rel="prefetch" href="/notebook/assets/js/18.09f358fa.js"><link rel="prefetch" href="/notebook/assets/js/19.9a530f5d.js"><link rel="prefetch" href="/notebook/assets/js/20.74091199.js"><link rel="prefetch" href="/notebook/assets/js/21.cf58d7af.js"><link rel="prefetch" href="/notebook/assets/js/22.918916cf.js"><link rel="prefetch" href="/notebook/assets/js/23.22f4fbfe.js"><link rel="prefetch" href="/notebook/assets/js/24.4dee0427.js"><link rel="prefetch" href="/notebook/assets/js/25.3884f79f.js"><link rel="prefetch" href="/notebook/assets/js/26.6d390805.js"><link rel="prefetch" href="/notebook/assets/js/27.24e1ee91.js"><link rel="prefetch" href="/notebook/assets/js/28.b1c7a9f6.js"><link rel="prefetch" href="/notebook/assets/js/29.88618292.js"><link rel="prefetch" href="/notebook/assets/js/3.4b62e0d3.js"><link rel="prefetch" href="/notebook/assets/js/30.f1161c67.js"><link rel="prefetch" href="/notebook/assets/js/31.2e48c7e9.js"><link rel="prefetch" href="/notebook/assets/js/32.7120904b.js"><link rel="prefetch" href="/notebook/assets/js/33.de268d46.js"><link rel="prefetch" href="/notebook/assets/js/34.a80d8ec0.js"><link rel="prefetch" href="/notebook/assets/js/35.b02e51c5.js"><link rel="prefetch" href="/notebook/assets/js/36.4d7257ca.js"><link rel="prefetch" href="/notebook/assets/js/37.0cc860ec.js"><link rel="prefetch" href="/notebook/assets/js/38.0a522031.js"><link rel="prefetch" href="/notebook/assets/js/39.a17fcb7c.js"><link rel="prefetch" href="/notebook/assets/js/4.7f159174.js"><link rel="prefetch" href="/notebook/assets/js/40.003dca4a.js"><link rel="prefetch" href="/notebook/assets/js/41.ef383bc0.js"><link rel="prefetch" href="/notebook/assets/js/42.e988c783.js"><link rel="prefetch" href="/notebook/assets/js/43.6413d3ae.js"><link rel="prefetch" href="/notebook/assets/js/44.06efd7fb.js"><link rel="prefetch" href="/notebook/assets/js/45.48655c20.js"><link rel="prefetch" href="/notebook/assets/js/46.5d108931.js"><link rel="prefetch" href="/notebook/assets/js/47.b18d6201.js"><link rel="prefetch" href="/notebook/assets/js/48.dd48abd3.js"><link rel="prefetch" href="/notebook/assets/js/49.42f5d604.js"><link rel="prefetch" href="/notebook/assets/js/5.50caeda2.js"><link rel="prefetch" href="/notebook/assets/js/50.798703e0.js"><link rel="prefetch" href="/notebook/assets/js/51.81ef1a78.js"><link rel="prefetch" href="/notebook/assets/js/52.fa88d97a.js"><link rel="prefetch" href="/notebook/assets/js/53.3b9562ff.js"><link rel="prefetch" href="/notebook/assets/js/54.a69746f6.js"><link rel="prefetch" href="/notebook/assets/js/55.1a2a1729.js"><link rel="prefetch" href="/notebook/assets/js/56.9093b90d.js"><link rel="prefetch" href="/notebook/assets/js/57.686ba75a.js"><link rel="prefetch" href="/notebook/assets/js/58.e9d6fbf9.js"><link rel="prefetch" href="/notebook/assets/js/59.fcc2ca27.js"><link rel="prefetch" href="/notebook/assets/js/6.680940b5.js"><link rel="prefetch" href="/notebook/assets/js/60.756f410d.js"><link rel="prefetch" href="/notebook/assets/js/61.46c944dd.js"><link rel="prefetch" href="/notebook/assets/js/62.9e82d498.js"><link rel="prefetch" href="/notebook/assets/js/63.6bfb7336.js"><link rel="prefetch" href="/notebook/assets/js/64.2b0a45ca.js"><link rel="prefetch" href="/notebook/assets/js/65.4a2a37e4.js"><link rel="prefetch" href="/notebook/assets/js/66.f3c6d521.js"><link rel="prefetch" href="/notebook/assets/js/67.2a6a0261.js"><link rel="prefetch" href="/notebook/assets/js/68.9001aee3.js"><link rel="prefetch" href="/notebook/assets/js/69.aa973a76.js"><link rel="prefetch" href="/notebook/assets/js/7.414f521a.js"><link rel="prefetch" href="/notebook/assets/js/70.bb3c91fa.js"><link rel="prefetch" href="/notebook/assets/js/71.450325ce.js"><link rel="prefetch" href="/notebook/assets/js/72.8fa5c89b.js"><link rel="prefetch" href="/notebook/assets/js/73.e3b60c74.js"><link rel="prefetch" href="/notebook/assets/js/74.c49bbe86.js"><link rel="prefetch" href="/notebook/assets/js/75.918f42eb.js"><link rel="prefetch" href="/notebook/assets/js/76.d2b611e2.js"><link rel="prefetch" href="/notebook/assets/js/77.5c3b22af.js"><link rel="prefetch" href="/notebook/assets/js/78.06bcf10d.js"><link rel="prefetch" href="/notebook/assets/js/79.c97246b1.js"><link rel="prefetch" href="/notebook/assets/js/8.2f6e9177.js"><link rel="prefetch" href="/notebook/assets/js/80.a83359f0.js"><link rel="prefetch" href="/notebook/assets/js/82.a371ba9d.js"><link rel="prefetch" href="/notebook/assets/js/83.90273617.js"><link rel="prefetch" href="/notebook/assets/js/84.0e20b995.js"><link rel="prefetch" href="/notebook/assets/js/9.4981ea64.js">
+    <link rel="stylesheet" href="/notebook/assets/css/0.styles.eccd4bb1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notebook/" class="home-link router-link-active"><!----> <span class="site-name">Jealh's Note</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notebook/学习日记/" class="nav-link">
+  主页
+</a></div> <a href="https://github.com/Jealh-h/notebook" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/notebook/学习日记/" class="nav-link">
+  主页
+</a></div> <a href="https://github.com/Jealh-h/notebook" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>学习日记</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>.vscode</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>css</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>git</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>html</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>javascript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>less</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>nginx</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>nodejs</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>react</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>typescript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>Web Security</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>操作系统</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>数据结构</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>浏览器</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading"><span>计网</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><p class="sidebar-heading open"><span>设计模式</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group collapsable is-sub-group depth-2"><p class="sidebar-heading"><span>创建型</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-2"><p class="sidebar-heading open"><span>结构型</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notebook/学习日记/设计模式/结构型/享元模式.html" class="sidebar-link">享元模式</a></li><li><a href="/notebook/学习日记/设计模式/结构型/代理模式.html" class="sidebar-link">代理模式</a></li><li><a href="/notebook/学习日记/设计模式/结构型/外观模式.html" class="sidebar-link">外观模式</a></li><li><a href="/notebook/学习日记/设计模式/结构型/桥接模式.html" class="sidebar-link">桥接模式</a></li><li><a href="/notebook/学习日记/设计模式/结构型/组合模式.html" class="sidebar-link">组合模式</a></li><li><a href="/notebook/学习日记/设计模式/结构型/装饰模式.html" class="active sidebar-link">装饰模式</a></li><li><a href="/notebook/学习日记/设计模式/结构型/适配器模式.html" class="sidebar-link">适配器模式</a></li></ul></section></li><li><section class="sidebar-group collapsable is-sub-group depth-2"><p class="sidebar-heading"><span>行为型</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/notebook/学习日记/设计模式/订阅发布模式.html" class="sidebar-link">发布订阅</a></li><li><a href="/notebook/学习日记/设计模式/面向对象软件设计原则.html" class="sidebar-link">面向对象软件设计原则</a></li></ul></section></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="装饰模式"><a href="#装饰模式" class="header-anchor">#</a> 装饰模式</h1> <blockquote><p>将组件嵌入另一个对象中，由这个对象添加功能，称这个嵌入的对象为装饰。这个装饰与它所装饰的组件接口一致，因此它对使用该组件的客户透明，它将客户请求转发给该组件，并且可能在转发前后执行一些额外的动作。透明性使得设计者可以递归嵌套多个装饰，从而可以添加任意多个功能，动态地给一个对象添加一些额外的职责。装饰模式提供了一种给类增加功能的方法，它通过动态地组合对象，<strong>可以给原有的类添加新的代码，而无须修改现有的代码</strong>。</p></blockquote> <p>装饰模式特点</p> <table><thead><tr><th style="text-align:center;">优点</th> <th style="text-align:center;">缺点</th></tr></thead> <tbody><tr><td style="text-align:center;">比静态继承更加灵活,使用装饰模式可以很容易地<strong>向对象添加职责</strong>的方式。可以用添加和分离的方法，对装饰在运行时添加和删除职责。相比之下，继承机制要求为每个添加的职责创建一个新的子类，这会残生很多新的子类，并会增加系统的复杂度。使用装饰模式可以很容易地重复添加某一个特性，而两次继承特性类则极容易出错，为了避免处于顶层的类有太多的特征，在装饰模式下，可以定义一个简单的类，并用装饰类给它逐渐地添加功能，从简单的不见组合出复杂的功能。具有低依赖性和低复杂性</td> <td style="text-align:center;">产生小对象：采用装饰模式进行系统设计往往会产生许多看上去类似的小对象，尽管对于了解这些系统的人来说，很容易进行定制，但是很难学习这些系统，排错也很困难，随着装饰者的数量的增加，可能会导致运行效率降低。</td></tr></tbody></table> <div class="language-typescript extra-class"><pre class="language-typescript"><code><span class="token comment">/**
+ * 例：超市购物单的内容除了包括物品名称、数量、单价、总价及收银员号灯主要信息外，
+ * 还可以包含欢迎辞、促销广告等额外的信息，而且这些额外信息的内容及打印位置也不固定。
+ * 
+ * 为了模拟打印购物单的功能模块，假设购物单主要由正文部分和动态变化的若干购物单头部
+ * 与脚部组成。
+ */</span>
+
+<span class="token comment">// 1.不采用设计模式</span>
+<span class="token comment">// 定义抽象类List并包含PrintInfo()抽象方法，</span>
+<span class="token comment">// 然后每个不同的购物单子类必须继承此类并实现PrintInfo()方法，</span>
+<span class="token comment">// 当子类数量过多时，会导致“类爆炸”</span>
+
+<span class="token comment">// 2. 采用装饰模式</span>
+<span class="token comment">// 将购物单正文类当作具体“被装饰者类”，把具体的头部信息或脚步额外信息当作“装饰者”</span>
+
+<span class="token comment">/**
+ * 购物单抽象类
+ */</span>
+<span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">ShoppingList</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token function">printInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 购物单具体类
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">concreteList</span> <span class="token keyword">extends</span> <span class="token class-name">ShoppingList</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> override <span class="token function">printInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;购物单正文信息&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 购物单装饰者的抽象类
+ */</span>
+<span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">ListDecorator</span> <span class="token keyword">extends</span> <span class="token class-name">ShoppingList</span> <span class="token punctuation">{</span>
+  <span class="token keyword">protected</span> shoppingList<span class="token operator">:</span> ShoppingList<span class="token punctuation">;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>s1<span class="token operator">:</span> ShoppingList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 派生类必须super调用</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>shoppingList <span class="token operator">=</span> s1<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">public</span> <span class="token keyword">abstract</span> override <span class="token function">printInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 头部信息1装饰者
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">header1List</span> <span class="token keyword">extends</span> <span class="token class-name">ListDecorator</span> <span class="token punctuation">{</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span>s1<span class="token operator">:</span> ShoppingList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">public</span> <span class="token function">printInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;头部信息1&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>shoppingList<span class="token punctuation">.</span><span class="token function">printInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 头部信息2装饰者
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">header2List</span> <span class="token keyword">extends</span> <span class="token class-name">ListDecorator</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>s2<span class="token operator">:</span> ShoppingList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">public</span> <span class="token function">printInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;头部信息2&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>shoppingList<span class="token punctuation">.</span><span class="token function">printInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 脚注1装饰者
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">footer1List</span> <span class="token keyword">extends</span> <span class="token class-name">ListDecorator</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>f1<span class="token operator">:</span> ShoppingList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>f1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">public</span> <span class="token function">printInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;脚注1信息&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>shoppingList<span class="token punctuation">.</span><span class="token function">printInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/**
+ * 脚注2装饰者
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">footer2List</span> <span class="token keyword">extends</span> <span class="token class-name">ListDecorator</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>f2<span class="token operator">:</span> ShoppingList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>f2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">public</span> <span class="token function">printInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;脚注2信息&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>shoppingList<span class="token punctuation">.</span><span class="token function">printInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> myList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">header1List</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">footer1List</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">footer2List</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">concreteList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  myList<span class="token punctuation">.</span><span class="token function">printInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;.......更改购物单的正文、头部、脚注的布局........&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  myList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">header2List</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">footer2List</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">footer1List</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">concreteList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  myList<span class="token punctuation">.</span><span class="token function">printInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notebook/学习日记/设计模式/结构型/组合模式.html" class="prev">
+        组合模式
+      </a></span> <span class="next"><a href="/notebook/学习日记/设计模式/结构型/适配器模式.html">
+        适配器模式
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notebook/assets/js/app.08b816ef.js" defer></script><script src="/notebook/assets/js/2.cb78087c.js" defer></script><script src="/notebook/assets/js/81.2bf6fa84.js" defer></script>
+  </body>
+</html>
