@@ -12,7 +12,7 @@ jobs:
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           TARGET_REPO: Jealh-h/notebook
-          # TARGET_BRANCH: master
+          TARGET_BRANCH: master
           # BUILD_SCRIPT: yarn && yarn docs:build
           BUILD_DIR: dist
           # CNAME: https://www.xxx.com
