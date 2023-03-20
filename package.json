@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "随便写写",
   "scripts": {
-    "docs:dev":"vuepress dev docs",
-    "docs:build":"vuepress build docs"
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "vuepress": "^1.9.9"
   }
 }
