@@ -12,8 +12,20 @@ function myNew(constr) {
   // arguments是 类数组对象
   // 可以判断一下constr是不是函数，以及generator函数
   let target = {};
-  let argu = Array.from(arguments).slice(1);
+  let args = Array.from(arguments).slice(1);
   target.__proto__ = constr.prototype;
-  return constr.apply(target, argu) ?? target;
+  let ins = constr.apply(target, args);
+  // 要返回 Object 类型才行，基础类型不行
+  return typeof ins === "object" ? ins : target;
+}
+```
+
+## 使用 Object.create
+
+```ts
+function myNew(cntr, ...args) {
+  let obj = Object.create(entr.prototype);
+  let ins = cntr.apply(obj, args);
+  return typeof ins === "object" ? ins : obj;
 }
 ```

@@ -12,7 +12,8 @@ module.exports = {
   themeConfig: {
     repo: 'Jealh-h/notebook', // github链接配置
     nav: [
-      { text: '主页', link: '/学习日记/' }
+      { text: '主页', link: '/学习日记/' },
+      { text: '前端进阶', link: '/前端进阶/' }
     ],
     sidebarDepth: 3,
     sidebar: sidebarConfig

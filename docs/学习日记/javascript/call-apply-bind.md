@@ -13,6 +13,7 @@ Function.prototype.call = function () {
     // 绑定到全局，但严格模式不一样
     thisArg = typeof window === "undefined" ? global : window;
   }
+  // 核心点，隐式绑定，谁掉用，this 指向谁
   thisArg.func = this; // 这里this是这个函数
   let result = thisArg.func(...args);
   delete thisArg.func;
