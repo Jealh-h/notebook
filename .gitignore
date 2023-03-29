@@ -2,6 +2,7 @@ docs/.vuepress/dist
 node_modules
 test
 index.ts
+index.js
 index.html
 home.html
 index.css
