@@ -13,7 +13,8 @@ module.exports = {
     repo: 'Jealh-h/notebook', // github链接配置
     nav: [
       { text: '主页', link: '/学习日记/' },
-      { text: '前端进阶', link: '/前端进阶/' }
+      { text: '前端进阶', link: '/前端进阶/' },
+      { text: '运维', link: '/运维/' }
     ],
     sidebarDepth: 3,
     sidebar: sidebarConfig
