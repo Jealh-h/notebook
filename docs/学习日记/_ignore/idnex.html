@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>测试专用的 html 文件</h1>
+    <div id="app"></div>
+    <script>
+      const vnode = {
+        tagName: "div",
+        props: {
+          className: "block-layout",
+        },
+        children: [
+          {
+            tagName: "li",
+            children: "1",
+          },
+          {
+            tagName: "li",
+            children: "2",
+          },
+        ],
+      };
+
+      // 递归实现 - 非中断式
+      const render = (vdom, container) => {
+        const { tagName, props, children } = vdom;
+        const el = document.createElement(tagName);
+        for (const key in props) {
+          el.setAttribute(key, props[key]);
+        }
+        if (Array.isArray(children)) {
+          children.forEach((child) => render(child, el));
+        } else {
+          el.textContent = children;
+        }
+        container.appendChild(el);
+      };
+      render(vnode, document.querySelector("#app"));
+    </script>
+  </body>
+</html>
