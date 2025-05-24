@@ -107,14 +107,21 @@ const p = new Promise((res, rej) => {
   res(123);
 })
 
-const p2 = p.then((res) => {
-  console.log(this === globalThis, this === p, res);
+p.then(res => {
+  console.log(1, res);
 })
 
-console.log(p2 === p);
-
-const p3 = p2.then(() => {
-  return 456;
+p.then(res => {
+  console.log(2, res);
 })
+// const p2 = p.then((res) => {
+//   console.log(this === globalThis, this === p, res);
+// })
 
-console.log(p3 === p2);
+// console.log(p2 === p);
+
+// const p3 = p2.then(() => {
+//   return 456;
+// })
+
+// console.log(p3 === p2);

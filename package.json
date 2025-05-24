@@ -4,9 +4,13 @@
   "description": "随便写写",
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "test": "promises-aplus-tests test/promise"
   },
   "dependencies": {
     "vuepress": "^1.9.9"
+  },
+  "devDependencies": {
+    "promises-aplus-tests": "*"
   }
 }
