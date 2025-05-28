@@ -1,0 +1,125 @@
+// ts 工具类型
+
+// Awaited
+// 取出异步 resolve 的类型
+
+type Service = Promise<unknown>;
+
+type response = Awaited<Service>;
+
+// Partial
+// 让所有属性变成可选的
+
+type Person = {
+  name: string;
+  age: number;
+};
+
+function g(p: Partial<Person>) {}
+
+g({ name: "123" });
+
+// Required
+// 让所有属性变成必选的
+
+type PointParams = {
+  type: string;
+  size?: number;
+};
+
+type RequiredParam = Required<PointParams>;
+
+// ReadOnly<type>
+// 让所有属性变成只读
+const a: Readonly<Array<number>> = [1, 2, 3];
+// a[1] = 2; // Index signature in type 'readonly number[]' only permits reading.t
+
+// Record<KeyT, VT>
+// 固定一个 map 的 k-v 类型
+const a1: Record<string, String> = { "1": "123" };
+
+// Pick<OT, PT>
+// 选择对象的某几个属性
+type NameType = Pick<Person, "name">;
+const p: NameType = { name: "123" };
+
+// Omit
+// 与 pick 相反
+type AgeType = Omit<Person, "name">;
+const a2: AgeType = { age: 88 };
+
+// Exclude<UnionType, ExcludedMembers>
+// 去除联合类型中的某些成员
+type ExcludeAny = Exclude<string | number | undefined, string>;
+// numer | undefined;
+
+const num1: ExcludeAny = 1234;
+
+// Extract<Type, Union>
+// 选取
+type P = Extract<string | number | undefined, string>;
+const sp: P = "string";
+
+// NonNullable<Type>
+// 排除 null 、undefined
+type SorN = NonNullable<string | number | undefined>;
+// type SorN = string | number
+
+// Parameters<Type>
+type f = (...arg: Array<unknown>) => void;
+type fParamType = Parameters<f>; // unknown[]
+
+// ConstructorParameters<Type>
+// 构造函数的参数类型
+type ConstructorParamTypeOfString = ConstructorParameters<typeof String>;
+const t: ConstructorParamTypeOfString[0] = 123; // any
+
+// ReturnType<Type>
+// 函数的返回类型
+
+type rt = ReturnType<typeof String>; // string
+
+type v = void;
+// const va:v = null;
+
+// InstanceType<Type>
+// 构造一个类型，该类型由 Type 中构造函数的实例类型组成。
+type inst = InstanceType<typeof String>; // String
+
+// NoInferType<Type>
+// 阻止对所含类型的推断。除阻止推论外，NoInfer<Type> 与 Type.Type<Type> 相同。
+function createStreetLight<C extends string>(
+  colors: C[],
+  defaultColor?: NoInfer<C>,
+  optionColor?: C
+) {
+  // ...
+}
+
+// Argument of type '"yellow"' is not assignable to parameter of type '"red" | "blue" | undefined'.
+//   createStreetLight(['red', 'blue'], 'yellow')
+
+// blank is ok, but yellow will case error
+// createStreetLight(['red', 'blue'], 'yellow', 'blank')
+
+// ThisParameterType<Type>
+// 提取函数类型的 this 参数类型，如果函数类型没有 this 参数，则提取未知类型。
+
+type et = typeof window.addEventListener;
+type thist = ThisParameterType<et>; // unknown
+
+// OmitThisParameter<Type>
+// 删除 Type 中的 this 参数。如果 Type 没有显式声明 this 参数，则结果只是 Type。否则，
+// 将从 Type 创建一个没有 this 参数的新函数类型。泛型会被删除，只有最后一个重载签名会传播到新函数类型中。
+
+// ThisType<Type>
+// 该实用程序不会返回转换后的类型。相反，它可以作为上下文此类型的标记。请注意，必须启用 noImplicitThis 标记才能使用此工具。
+
+// Uppercase<StringType>
+// Lowercase<StringType>
+// Capitalize<StringType>
+// Uncapitalize<StringType>
+
+type stringType = "a" & "b";
+
+type upperS = Uppercase<"Tab">; // TAB

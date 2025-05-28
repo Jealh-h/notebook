@@ -16,8 +16,8 @@ class MyPromise<T = unknown> {
   time: number;
 
   // 构造函数里面添加两个数组存储成功和失败的回调
-  private onFulfilledCallbacks: Array<Function> = [];
-  private onRejectedCallbacks: Array<Function> = [];
+  onFulfilledCallbacks: Array<Function> = [];
+  onRejectedCallbacks: Array<Function> = [];
 
   static reject(r: unknown) {
     return new MyPromise((_, reject) => {
