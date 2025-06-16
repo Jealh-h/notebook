@@ -9,6 +9,13 @@
     <h1>测试专用的 html 文件</h1>
     <div id="app"></div>
     <script>
+      console.log("start");
+      navigator.sendBeacon(
+        "http://127.0.0.1:3001/",
+        new URLSearchParams("a=hello&b=world&c=a&d=2&e=false")
+      );
+    </script>
+    <!-- <script>
       const vnode = {
         tagName: "div",
         props: {
@@ -41,6 +48,6 @@
         container.appendChild(el);
       };
       render(vnode, document.querySelector("#app"));
-    </script>
+    </script> -->
   </body>
 </html>
